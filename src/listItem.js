@@ -11,11 +11,16 @@ import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOu
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
-      <ListItemIcon>
-        <HomeOutlinedIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+    <ListItemButton sx={{ height: 56, backgroundColor: "#FF6647"}}>
+        <ListItemIcon>
+            <HomeOutlinedIcon style={{ color: 'white' }} />
+        </ListItemIcon>
+        <ListItemText
+            primary="Dashboard"
+            primaryTypographyProps={{
+            color: 'white',
+            }}
+        />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
