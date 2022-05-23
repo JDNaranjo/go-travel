@@ -89,15 +89,14 @@ function DashboardContent() {
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
+              backgroundColor: "#F6F7FB",
             }}
           >
             <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
               onClick={toggleDrawer}
+              edge="start"
               sx={{
-                marginRight: '36px',
+                marginRight: '30px',
                 ...(open && { display: 'none' }),
               }}
             >
@@ -106,21 +105,22 @@ function DashboardContent() {
             <Typography
               component="h1"
               variant="h6"
-              color="inherit"
+              color="black"
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Go-Travel
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} sx={{backgroundColor: "#F6F7FB"}}>
           <Toolbar
             sx={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'flex-end',
               px: [1],
+              backgroundColor: "#F6F7FB"
             }}
           >
             <IconButton onClick={toggleDrawer}>
@@ -128,9 +128,9 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
+          <List component="nav" sx={{backgroundColor: "#F6F7FB"}}>
             {mainListItems}
-            <Box sx={{ mt: 40, ml: 1, mb: 1 }}>
+            <Box sx={{ mt: 50, ml: 1, mb: 1 }}>
               {secondaryListItems}
             </Box>
           </List>
