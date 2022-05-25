@@ -16,9 +16,9 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { mainListItems, secondaryListItems } from './listItem';
-import Deposits from './Deposits';
 import Orders from './Orders';
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
+import MediaCard from './MediaCard';
 
 function Copyright(props) {
   return (
@@ -222,16 +222,7 @@ function DashboardContent() {
               </Grid>
               {/* Recent Deposits */}
               <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Deposits />
-                </Paper>
+                  <MediaCard />
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
