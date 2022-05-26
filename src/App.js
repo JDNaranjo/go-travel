@@ -14,11 +14,13 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import { mainListItems, secondaryListItems } from './listItem';
-import Orders from './Orders';
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
 import MediaCard from './MediaCard';
+import MediaCardLocal from './MediaCardLocal';
+import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
+import Stack from '@mui/material/Stack';
+import Modal from '@mui/material/Modal';
 
 function Copyright(props) {
   return (
@@ -126,11 +128,26 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  const [openModal, setOpenModal] = React.useState(false);
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -216,28 +233,53 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={{ xs: 1, sm: 2, md: 1 }}
+            >
+                <ExploreOutlinedIcon sx={{color: "gray"}} />
+                <Typography variant="body2" color="text.secondary"  >
+                    Explore typical plans
+                </Typography>
+            </Stack>
+            <br></br>
             <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
               <Grid item xs={12} md={4} lg={3}>
                   <MediaCard />
               </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
-                </Paper>
+              <Grid item xs={12} md={4} lg={3}>
+                  <MediaCard onClick={handleOpen} />
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                  <MediaCard onClick={handleOpen} />
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                  <MediaCard onClick={handleOpen} />
+              </Grid>
+            </Grid>
+            <br></br>
+            <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={{ xs: 1, sm: 2, md: 1 }}
+            >
+                <ExploreOutlinedIcon sx={{color: "gray"}} />
+                <Typography variant="body2" color="text.secondary"  >
+                    Explore las Joyas
+                </Typography>
+            </Stack>
+            <br></br>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={4} lg={3}>
+                  <MediaCardLocal />
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                  <MediaCardLocal />
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                  <MediaCardLocal />
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                  <MediaCardLocal />
               </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />

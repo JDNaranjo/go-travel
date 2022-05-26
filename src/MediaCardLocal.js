@@ -20,7 +20,7 @@ const style = {
   p: 4,
 };
 
-export default function MediaCard() {
+export default function MediaCardLocal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -30,12 +30,12 @@ export default function MediaCard() {
       <CardMedia
         component="img"
         height="140"
-        image={require('./img/torre-pisa.jpg')}
+        image={require('./img/salento.jpg')}
         alt="torre pisa"
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div" onClick={handleOpen}>
-          Torre inclinada de Pisa
+          Salento
         </Typography>
         <Modal
           open={open}
@@ -45,7 +45,7 @@ export default function MediaCard() {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Torre de pisa
+              Salento
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               Descripcion del lugar
@@ -58,7 +58,7 @@ export default function MediaCard() {
         >
             <LocationOnIcon sx={{color: "#FF6647"}} />
             <Typography variant="body2" color="text.secondary"  >
-                Pisa, Italia
+                Salento, Colombia
             </Typography>
         </Stack>
       </CardContent>
