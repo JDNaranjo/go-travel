@@ -16,7 +16,7 @@ export default function MediaCard() {
         alt="torre pisa"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           Torre inclinada de Pisa
         </Typography>
         <Stack

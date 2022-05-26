@@ -148,6 +148,15 @@ function DashboardContent() {
             >
               <MenuIcon />
             </IconButton>
+            <Box
+              component="img"
+              sx={{
+                height: 40,
+                width: 40,
+              }}
+              alt="Go-Travel logo"
+              src={require('./img/logo.png')}
+            />
           <Typography
             variant="h6"
             noWrap
